@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = process.env.PORT || 1338;
+var port = process.env.PORT || 1338heroku git:remote -a supercalendergit commit -am "make it better";
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +16,7 @@ app.listen(port, function () {
 app.post('/hello', function (req, res, next) {
   var userName = req.body.user_name;
   var botPayload = {
-    text : 'Hello ' + userName + ', welcome to Devdactic Slack channel! I\'ll be your guide.'
+    text : 'Hello @' + userName + ', welcome to Super Calender.'
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
